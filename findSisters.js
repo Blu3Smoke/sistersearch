@@ -6,7 +6,7 @@ let list = document.getElementById('list');
 
 let mask = BigInt(Math.pow(2, 48) - 1);
 let sisters;
-fetch('/seeds.json').then(res => res.json()).then(data => {
+fetch('/sistersearch/seeds.json').then(res => res.json()).then(data => {
     loading.style.display = 'none';
     container.style.display = 'flex';
     sisters = data;
