@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sister Search</title>
+    <style>
+      body, html {
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          height: 100%;
+      }
+
+      body {
+          font-family: "Helvetica Neue", "Arial";
+      }
+
+      h3 {
+          margin: 5px;
+      }
+
+      #seed {
+          margin: 5px;
+          padding: 5px;
+          width: 40%;
+          text-align: center;
+      }
+
+      .container {
+          margin: 20px auto;
+          width: 60%;
+          padding: 10px;
+          border-radius: 5px;
+          background: #eee;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+      }
+
+      button {
+          padding: 5px;
+          border-radius: 5px;
+          margin: 5px;
+      }
+
+      li {
+          
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="loading">Loading...</h1>
+    <div id="container" class="container">
+      <h3>Input Seed:</h3>
+      <input id="seed"/>
+      <button onclick="findSisters()">Find Sisters</button><br>
+      <ul id="list">
+      </ul>
+    </div>
+    <script src="findSisters.js"></script>
+  </body>
+</html>
