@@ -4,12 +4,14 @@ container.style.display = 'none';
 let seedInput = document.getElementById('seed');
 let list = document.getElementById('list');
 
-let mask = BigInt(Math.pow(2, 48) - 1);
+let mask = BigInt("281474976710655"); // 2^48 - 1
 let sisters;
-fetch('/sistersearch/seeds.json').then(res => res.json()).then(data => {
+fetch('./seeds.json').then(res => res.json()).then(data => {
     loading.style.display = 'none';
     container.style.display = 'flex';
     sisters = data;
+}).catch(err => {
+    loading.innerText = "Error loading seedlist, please try again";
 });
 
 
@@ -34,7 +36,7 @@ function findSisters() {
         removeAllChildNodes(list);
         for (let sister of result) {
             let elem = document.createElement('li');
-            elem.innerText = sister.toString();
+            elem.innerText = sister;
             list.appendChild(elem);
         }
     } else {
